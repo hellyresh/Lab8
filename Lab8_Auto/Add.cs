@@ -25,7 +25,9 @@ namespace Lab8_Auto
             if (surnameTextBox.Text != "" && idmarkTextBox.Text != ""
                 && markTextBox.Text != "" && fuelTextBox.Text != ""
                 && tankVolTextBox.Text != "" && powerTextBox.Text != ""
-                && fuelRestTextBox.Text != "" && oilVolTextBox.Text != "")
+                && fuelRestTextBox.Text != "" && oilVolTextBox.Text != "" &&
+                int.TryParse(idmarkTextBox.Text, out _) && float.TryParse(powerTextBox.Text, out _) &&
+                float.TryParse(tankVolTextBox.Text, out _) && float.TryParse(fuelRestTextBox.Text, out _) && float.TryParse(oilVolTextBox.Text, out _))
             {
                 try
                 {
@@ -44,12 +46,12 @@ namespace Lab8_Auto
                 {
                     MessageBox.Show("Ошибка записи в файл");
                 }
+                Close();
             }
             else
             {
                 MessageBox.Show("Ошибка! Необходимо верно заополнить все поля.");
             }
-            Close();
         }
         public IEnumerable<XElement> AddElement(
             string surname,

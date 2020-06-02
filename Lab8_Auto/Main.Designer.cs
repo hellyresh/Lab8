@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.showAll = new System.Windows.Forms.Button();
-            this.search = new System.Windows.Forms.Button();
-            this.add = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.search = new System.Windows.Forms.Button();
+            this.showAll = new System.Windows.Forms.Button();
             this.tableView = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,36 +58,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(801, 717);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // showAll
+            // delete
             // 
-            this.showAll.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.showAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.showAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.showAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.showAll.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showAll.Location = new System.Drawing.Point(20, 5);
-            this.showAll.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
-            this.showAll.Name = "showAll";
-            this.showAll.Size = new System.Drawing.Size(160, 61);
-            this.showAll.TabIndex = 0;
-            this.showAll.Text = "Показать всё";
-            this.showAll.UseVisualStyleBackColor = false;
-            this.showAll.Click += new System.EventHandler(this.ShowAll);
-            // 
-            // search
-            // 
-            this.search.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.search.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search.Location = new System.Drawing.Point(220, 5);
-            this.search.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(160, 61);
-            this.search.TabIndex = 1;
-            this.search.Text = "Поиск";
-            this.search.UseVisualStyleBackColor = false;
-            this.search.Click += new System.EventHandler(this.search_Click);
+            this.delete.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.delete.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.Location = new System.Drawing.Point(620, 5);
+            this.delete.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(161, 61);
+            this.delete.TabIndex = 3;
+            this.delete.Text = "Удалить";
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // add
             // 
@@ -104,20 +88,36 @@
             this.add.UseVisualStyleBackColor = false;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // delete
+            // search
             // 
-            this.delete.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.delete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.delete.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete.Location = new System.Drawing.Point(620, 5);
-            this.delete.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(161, 61);
-            this.delete.TabIndex = 3;
-            this.delete.Text = "Удалить";
-            this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
+            this.search.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.search.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search.Location = new System.Drawing.Point(220, 5);
+            this.search.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(160, 61);
+            this.search.TabIndex = 1;
+            this.search.Text = "Поиск";
+            this.search.UseVisualStyleBackColor = false;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            // 
+            // showAll
+            // 
+            this.showAll.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.showAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.showAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.showAll.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAll.Location = new System.Drawing.Point(20, 5);
+            this.showAll.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
+            this.showAll.Name = "showAll";
+            this.showAll.Size = new System.Drawing.Size(160, 61);
+            this.showAll.TabIndex = 0;
+            this.showAll.Text = "Показать всё";
+            this.showAll.UseVisualStyleBackColor = false;
+            this.showAll.Click += new System.EventHandler(this.ShowAll);
             // 
             // tableView
             // 
@@ -145,6 +145,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автомобили";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

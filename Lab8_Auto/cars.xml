@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cars>
+  <gasPrice>50</gasPrice>
+  <oilPrice>40</oilPrice>
+  <car>
+    <surname>Соколова</surname>
+    <idmark>3</idmark>
+    <mark>Toyota</mark>
+    <fuel>e95</fuel>
+    <power>300</power>
+    <tankVol>100</tankVol>
+    <fuelRest>30</fuelRest>
+    <oilVol>3</oilVol>
+  </car>
+  <car>
+    <surname>Иванов</surname>
+    <idmark>1</idmark>
+    <mark>VAZ</mark>
+    <fuel>diesel</fuel>
+    <power>200</power>
+    <tankVol>70</tankVol>
+    <fuelRest>20</fuelRest>
+    <oilVol>1</oilVol>
+  </car>
+  <car>
+    <surname>Петров</surname>
+    <idmark>2</idmark>
+    <mark>Mazda</mark>
+    <fuel>e92</fuel>
+    <power>200</power>
+    <tankVol>100</tankVol>
+    <fuelRest>90</fuelRest>
+    <oilVol>2</oilVol>
+  </car>
+  <car>
+    <surname>Смирнов</surname>
+    <idmark>2</idmark>
+    <mark>Mazda</mark>
+    <fuel>e95</fuel>
+    <power>100</power>
+    <tankVol>50</tankVol>
+    <fuelRest>20</fuelRest>
+    <oilVol>3</oilVol>
+  </car>
+</cars>

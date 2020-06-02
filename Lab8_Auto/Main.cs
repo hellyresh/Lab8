@@ -14,7 +14,7 @@ namespace Lab8_Auto
     public partial class Main : Form
     {
         public static int gasPrice = 0, oilPrice = 0;
-        public static string source = "cars.xml";
+        public static string source = "../../cars.xml";
         public Main()
         {
             InitializeComponent();
@@ -49,22 +49,21 @@ namespace Lab8_Auto
             XElement tankVol = xe.Element("tankVol");
             XElement fuelRest = xe.Element("fuelRest");
             XElement oilVol = xe.Element("oilVol");
-
             if (surname != null && idmark != null && mark != null && fuel != null && tankVol != null &&
                 power != null && fuelRest != null && oilVol != null &&
                 surname.Value != "" && idmark.Value != "" && mark.Value != "" && fuel.Value != "" &&
                 power.Value != "" && fuelRest.Value != "" && oilVol.Value != "")
             {
-                info = "Фамилия: " + surname.Value + Environment.NewLine +
-                    "Код марки: " + idmark.Value + Environment.NewLine +
-                    "Марка автомобиля: " + mark.Value + Environment.NewLine +
-                    "Требуемая марка бензина: " + fuel.Value + Environment.NewLine +
-                    "Мощность двигателя: " + power.Value + Environment.NewLine +
-                    "Объём бака: " + tankVol.Value + Environment.NewLine +
-                    "Остаток бензина: " + fuelRest.Value + Environment.NewLine +
-                    "Объём масла: " + oilVol.Value + Environment.NewLine +
-                    "Цена литра бензина: " + gasPrice + Environment.NewLine +
-                    "Цена заливки масла: " + oilPrice + Environment.NewLine + Environment.NewLine;
+                info = "Фамилия: " + surname.Value +
+                        "\r\nКод марки: " + idmark.Value +
+                        "\r\nМарка автомобиля: " + mark.Value +
+                        "\r\nТребуемая марка бензина: " + fuel.Value +
+                        "\r\nМощность двигателя: " + power.Value +
+                        "\r\nОбъём бака: " + tankVol.Value +
+                        "\r\nОстаток бензина: " + fuelRest.Value +
+                        "\r\nОбъём масла: " + oilVol.Value +
+                        "\r\nЦена литра бензина: " + gasPrice +
+                        "\r\nЦена заливки масла: " + oilPrice + "\r\n\r\n";
             }
             return info;
         }
@@ -96,10 +95,12 @@ namespace Lab8_Auto
             }
         }
 
-        public void SetText(string str)
+        private void Main_Load(object sender, EventArgs e)
         {
-            tableView.Text = str;
+
         }
+
+        
 
 
     }
