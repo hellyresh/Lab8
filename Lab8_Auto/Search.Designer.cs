@@ -44,13 +44,13 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.mark, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.surname, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.fuel, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.power, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.searchTextBox, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.searchIt, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.power, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.fuel, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.mark, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.surname, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -69,7 +69,7 @@
             this.mark.AutoSize = true;
             this.mark.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mark.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mark.Location = new System.Drawing.Point(254, 3);
+            this.mark.Location = new System.Drawing.Point(254, 50);
             this.mark.Name = "mark";
             this.mark.Size = new System.Drawing.Size(246, 41);
             this.mark.TabIndex = 0;
@@ -82,7 +82,7 @@
             this.surname.Checked = true;
             this.surname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.surname.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surname.Location = new System.Drawing.Point(254, 144);
+            this.surname.Location = new System.Drawing.Point(254, 3);
             this.surname.Name = "surname";
             this.surname.Size = new System.Drawing.Size(246, 41);
             this.surname.TabIndex = 3;
@@ -95,7 +95,7 @@
             this.fuel.AutoSize = true;
             this.fuel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fuel.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fuel.Location = new System.Drawing.Point(254, 50);
+            this.fuel.Location = new System.Drawing.Point(254, 97);
             this.fuel.Name = "fuel";
             this.fuel.Size = new System.Drawing.Size(246, 41);
             this.fuel.TabIndex = 1;
@@ -107,7 +107,7 @@
             this.power.AutoSize = true;
             this.power.Dock = System.Windows.Forms.DockStyle.Fill;
             this.power.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.power.Location = new System.Drawing.Point(254, 97);
+            this.power.Location = new System.Drawing.Point(254, 144);
             this.power.Name = "power";
             this.power.Size = new System.Drawing.Size(246, 41);
             this.power.TabIndex = 2;
