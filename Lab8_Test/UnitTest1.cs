@@ -1,15 +1,70 @@
-﻿using System;
+﻿using Lab8_Auto;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Lab8_Auto;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
 namespace Lab8_Test
 {
     [TestClass]
-    public class UnitTest1
+    public class MainTest
     {
         private static string sourcesPath = "../../../Lab8_Test/sources/";
+
+        [TestMethod]
+        public void TestParseOneCar()
+        {
+            string expected = "Фамилия: Смирнов" +
+                    "\r\nКод марки: 3" +
+                    "\r\nМарка автомобиля: Лада" +
+                    "\r\nТребуемая марка бензина: e92" +
+                    "\r\nМощность двигателя: 100" +
+                    "\r\nОбъём бака: 60" +
+                    "\r\nОстаток бензина: 10" +
+                    "\r\nОбъём масла: 4" +
+                    "\r\nЦена литра бензина: 50" +
+                    "\r\nЦена заливки масла: 40\r\n\r\n";
+            Main.source = sourcesPath + "f1.xml";
+            Main m = new Main();
+            Assert.AreEqual(m.tableView.Text, expected);
+        }
+
+        [TestMethod]
+        public void TestParseTwoCars()
+        {
+            string expected = "Фамилия: Смирнов" +
+                    "\r\nКод марки: 3" +
+                    "\r\nМарка автомобиля: Лада" +
+                    "\r\nТребуемая марка бензина: e92" +
+                    "\r\nМощность двигателя: 100" +
+                    "\r\nОбъём бака: 60" +
+                    "\r\nОстаток бензина: 10" +
+                    "\r\nОбъём масла: 4" +
+                    "\r\nЦена литра бензина: 50" +
+                    "\r\nЦена заливки масла: 40\r\n\r\n" +
+                     "Фамилия: Волков" +
+                    "\r\nКод марки: 3" +
+                    "\r\nМарка автомобиля: Волга" +
+                    "\r\nТребуемая марка бензина: e95" +
+                    "\r\nМощность двигателя: 100" +
+                    "\r\nОбъём бака: 60" +
+                    "\r\nОстаток бензина: 10" +
+                    "\r\nОбъём масла: 4" +
+                    "\r\nЦена литра бензина: 50" +
+                    "\r\nЦена заливки масла: 40\r\n\r\n";
+            Main.source = sourcesPath + "f2.xml";
+            Main m = new Main();
+            Assert.AreEqual(m.tableView.Text, expected);
+        }
+
+        [TestMethod]
+        public void TestParseNoCar()
+        {
+            string expected = "";
+            Main.source = sourcesPath + "f3.xml";
+            Main m = new Main();
+            Assert.AreEqual(m.tableView.Text, expected);
+        }
 
         [TestMethod]
         public void TestParseNoName()
@@ -21,7 +76,7 @@ namespace Lab8_Test
         }
 
         [TestMethod]
-        public void TestParseNoBrandId()
+        public void TestParseNoIdMark()
         {
             string expected = "";
             Main m = new Main();
@@ -30,64 +85,32 @@ namespace Lab8_Test
         }
 
         [TestMethod]
-        public void TestParseNoBrand()
-        {
-            string expected = "";
-            Main.source = sourcesPath + "f6.xml";
-            Main m = new Main();
-            Assert.AreEqual(m.tableView.Text, expected);
-        }
-        [TestMethod]
-        public void TestParseNoGasoline()
+        public void TestParseNoFuel()
         {
             string expected = "";
             Main.source = sourcesPath + "f7.xml";
             Main m = new Main();
             Assert.AreEqual(m.tableView.Text, expected);
         }
-        [TestMethod]
-        public void TestParseNoEnginePower()
-        {
-            string expected = "";
-            Main.source = sourcesPath + "f8.xml";
-            Main m = new Main();
-            Assert.AreEqual(m.tableView.Text, expected);
-        }
-        [TestMethod]
-        public void TestParseNoVolumeTank()
-        {
-            string expected = "";
-            Main.source = sourcesPath + "f9.xml";
-            Main m = new Main();
-            Assert.AreEqual(m.tableView.Text, expected);
-        }
-        [TestMethod]
-        public void TestParseNoVolumeOil()
-        {
-            string expected = "";
-            Main.source = sourcesPath + "f10.xml";
-            Main m = new Main();
-
-            Assert.AreEqual(m.tableView.Text, expected);
-        }
+        
         [TestMethod]
         public void TestAddElement()
         {
             ClearIfExists("f11.xml");
-            string expected = "Фамилия: 1" + Environment.NewLine +
-                    "Код марки: 2" + Environment.NewLine +
-                    "Марка автомобиля: 3" + Environment.NewLine +
-                    "Требуемая марка бензина: 4" + Environment.NewLine +
-                    "Мощность двигателя: 5" + Environment.NewLine +
-                    "Объём бака: 6" + Environment.NewLine +
-                    "Остаток бензина: 7" + Environment.NewLine +
-                    "Объём масла: 8" + Environment.NewLine +
-                    "Цена литра бензина: 0" + Environment.NewLine +
-                    "Цена заливки масла: 0" + Environment.NewLine + Environment.NewLine;
+            string expected = "Фамилия: 1" +
+                    "\r\nКод марки: 2" +
+                    "\r\nМарка автомобиля: 3" +
+                    "\r\nТребуемая марка бензина: 4" +
+                    "\r\nМощность двигателя: 5" +
+                    "\r\nОбъём бака: 6" +
+                    "\r\nОстаток бензина: 7" +
+                    "\r\nОбъём масла: 8" +
+                    "\r\nЦена литра бензина: 0" +
+                    "\r\nЦена заливки масла: 0\r\n\r\n";
             Main.source = sourcesPath + "f11.xml";
             TextBox textBox = new TextBox();
-            Add addProperties = new Add(null);
-            var addResult = addProperties.AddElement("1", "2", "3", "4", "5", "6", "7", "8");
+            Add add = new Add(null);
+            var addResult = add.AddElement("1", "2", "3", "4", "5", "6", "7", "8");
             Main.PrintElements(textBox, addResult);
             Assert.AreEqual(textBox.Text, expected);
         }
@@ -95,30 +118,30 @@ namespace Lab8_Test
         [TestMethod]
         public void TestFindTwoCars()
         {
-            string expected = "Фамилия: Тупин" + Environment.NewLine +
-                    "Код марки: 3" + Environment.NewLine +
-                    "Марка автомобиля: Волга" + Environment.NewLine +
-                    "Требуемая марка бензина: gas3" + Environment.NewLine +
-                    "Мощность двигателя: 100" + Environment.NewLine +
-                    "Объём бака: 60" + Environment.NewLine +
-                    "Остаток бензина: 10" + Environment.NewLine +
-                    "Объём масла: 4" + Environment.NewLine +
-                    "Цена литра бензина: 0" + Environment.NewLine +
-                    "Цена заливки масла: 0" + Environment.NewLine + Environment.NewLine +
-                    "Фамилия: Тупин" + Environment.NewLine +
-                    "Код марки: 3" + Environment.NewLine +
-                    "Марка автомобиля: Волга" + Environment.NewLine +
-                    "Требуемая марка бензина: gas4" + Environment.NewLine +
-                    "Мощность двигателя: 100" + Environment.NewLine +
-                    "Объём бака: 60" + Environment.NewLine +
-                    "Остаток бензина: 10" + Environment.NewLine +
-                    "Объём масла: 4" + Environment.NewLine +
-                    "Цена литра бензина: 0" + Environment.NewLine +
-                    "Цена заливки масла: 0" + Environment.NewLine + Environment.NewLine;
+            string expected = "Фамилия: Смирнов" +
+                    "\r\nКод марки: 3" +
+                    "\r\nМарка автомобиля: Лада" +
+                    "\r\nТребуемая марка бензина: e92" +
+                    "\r\nМощность двигателя: 100" +
+                    "\r\nОбъём бака: 60" +
+                    "\r\nОстаток бензина: 10" +
+                    "\r\nОбъём масла: 4" +
+                    "\r\nЦена литра бензина: 0" +
+                    "\r\nЦена заливки масла: 0\r\n\r\n" +
+                     "Фамилия: Волков" +
+                    "\r\nКод марки: 3" +
+                    "\r\nМарка автомобиля: Волга" +
+                    "\r\nТребуемая марка бензина: e95" +
+                    "\r\nМощность двигателя: 100" +
+                    "\r\nОбъём бака: 60" +
+                    "\r\nОстаток бензина: 10" +
+                    "\r\nОбъём масла: 4" +
+                    "\r\nЦена литра бензина: 0" +
+                    "\r\nЦена заливки масла: 0\r\n\r\n";
             Main.source = sourcesPath + "f12.xml";
             TextBox textBox = new TextBox();
-            Search searchProperties = new Search(null);
-            var searchResult = searchProperties.SearchList("surname", "Тупин");
+            Search search = new Search(null);
+            var searchResult = search.SearchList("power", "100");
             Main.PrintElements(textBox, searchResult);
             Assert.AreEqual(textBox.Text, expected);
         }
@@ -126,20 +149,20 @@ namespace Lab8_Test
         [TestMethod]
         public void TestFindOneCars()
         {
-            string expected = "Фамилия: Путин" + Environment.NewLine +
-                    "Код марки: 3" + Environment.NewLine +
-                    "Марка автомобиля: Волга" + Environment.NewLine +
-                    "Требуемая марка бензина: gas5" + Environment.NewLine +
-                    "Мощность двигателя: 100" + Environment.NewLine +
-                    "Объём бака: 60" + Environment.NewLine +
-                    "Остаток бензина: 10" + Environment.NewLine +
-                    "Объём масла: 4" + Environment.NewLine +
-                    "Цена литра бензина: 0" + Environment.NewLine +
-                    "Цена заливки масла: 0" + Environment.NewLine + Environment.NewLine;
+            string expected = "Фамилия: Смирнов" +
+                    "\r\nКод марки: 3" +
+                    "\r\nМарка автомобиля: Лада" +
+                    "\r\nТребуемая марка бензина: e92" +
+                    "\r\nМощность двигателя: 100" +
+                    "\r\nОбъём бака: 60" +
+                    "\r\nОстаток бензина: 10" +
+                    "\r\nОбъём масла: 4" +
+                    "\r\nЦена литра бензина: 0" +
+                    "\r\nЦена заливки масла: 0\r\n\r\n";
             Main.source = sourcesPath + "f12.xml";
             TextBox textBox = new TextBox();
-            Search searchProperties = new Search(null);
-            var searchResult = searchProperties.SearchList("fuel", "gas5");
+            Search search = new Search(null);
+            var searchResult = search.SearchList("fuel", "e92");
             Main.PrintElements(textBox, searchResult);
             Assert.AreEqual(textBox.Text, expected);
         }
@@ -150,8 +173,8 @@ namespace Lab8_Test
             string expected = "";
             Main.source = sourcesPath + "f12.xml";
             TextBox textBox = new TextBox();
-            Search searchProperties = new Search(null);
-            var searchResult = searchProperties.SearchList("surname", "LOL KEK");
+            Search search = new Search(null);
+            var searchResult = search.SearchList("fuel", "aaaaa");
             Main.PrintElements(textBox, searchResult);
             Assert.AreEqual(textBox.Text, expected);
         }
@@ -203,10 +226,12 @@ namespace Lab8_Test
             if (File.Exists(sourcesPath + fileName))
             {
                 File.Delete(sourcesPath + fileName);
-                var tw = new StreamWriter(sourcesPath + fileName, true);
-                tw.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
-                tw.WriteLine("<cars>");
-                tw.WriteLine("</cars>");
+                using (var tw = new StreamWriter(sourcesPath + fileName, true))
+                {
+                    tw.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+                    tw.WriteLine("<cars>");
+                    tw.WriteLine("</cars>");
+                }
             }
         }
     }

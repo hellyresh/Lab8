@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cars>
+  <car>
+    <surname>1</surname>
+    <idmark>2</idmark>
+    <mark>3</mark>
+    <fuel>4</fuel>
+    <power>5</power>
+    <tankVol>6</tankVol>
+    <fuelRest>7</fuelRest>
+    <oilVol>8</oilVol>
+  </car>
+</cars>

@@ -30,9 +30,9 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.mark = new System.Windows.Forms.RadioButton();
+            this.surname = new System.Windows.Forms.RadioButton();
             this.fuel = new System.Windows.Forms.RadioButton();
             this.power = new System.Windows.Forms.RadioButton();
-            this.surname = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchIt = new System.Windows.Forms.Button();
@@ -76,6 +76,20 @@
             this.mark.Text = "марка автомобиля";
             this.mark.UseVisualStyleBackColor = true;
             // 
+            // surname
+            // 
+            this.surname.AutoSize = true;
+            this.surname.Checked = true;
+            this.surname.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.surname.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.surname.Location = new System.Drawing.Point(254, 144);
+            this.surname.Name = "surname";
+            this.surname.Size = new System.Drawing.Size(246, 41);
+            this.surname.TabIndex = 3;
+            this.surname.TabStop = true;
+            this.surname.Text = "фамилия владельца";
+            this.surname.UseVisualStyleBackColor = true;
+            // 
             // fuel
             // 
             this.fuel.AutoSize = true;
@@ -99,20 +113,6 @@
             this.power.TabIndex = 2;
             this.power.Text = "мощность двигателя";
             this.power.UseVisualStyleBackColor = true;
-            // 
-            // surname
-            // 
-            this.surname.AutoSize = true;
-            this.surname.Checked = true;
-            this.surname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.surname.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surname.Location = new System.Drawing.Point(254, 144);
-            this.surname.Name = "surname";
-            this.surname.Size = new System.Drawing.Size(246, 41);
-            this.surname.TabIndex = 3;
-            this.surname.TabStop = true;
-            this.surname.Text = "фамилия владельца";
-            this.surname.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
